@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 
-const projectSchema = new Schema({
+const listSchema = new Schema({
   title: String,
   description: String,
   owner: { type: Schema.Types.ObjectId, ref: 'User' },
@@ -13,6 +13,6 @@ const projectSchema = new Schema({
   ]
 });
 
-const Project = mongoose.model('Project', projectSchema);
+const List = mongoose.model('List', listSchema);
 
-module.exports = Project;
+module.exports = List;

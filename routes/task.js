@@ -1,6 +1,6 @@
 const express = require('express');
 const Task = require('../models/Task');
-const Project = require('../models/Project');
+const List = require('../models/List');
 const router = express.Router();
 router.get('/:id', (req, res) => {
   const id = req.params.id;
@@ -13,19 +13,19 @@ router.get('/:id', (req, res) => {
     });
 });
 router.post('/', (req, res) => {
-  const { title, description, projectId } = req.body;
+  const { title, description, listId } = req.body;
   console.log('task');
   Task.create({
     title,
     description,
-    project: projectId
+    list: listId
   })
     .then(task => {
-      return Project.findByIdAndUpdate(projectId, {
+      return List.findByIdAndUpdate(listId, {
         $push: { tasks: task._id }
       }).then(() => {
         res.status(201).json({
-          message: `Task with id ${task._id} was successfully added to project with id ${projectId}`
+          message: `Task with id ${task._id} was successfully added to list with id ${listId}`
         });
       });
     })
@@ -48,7 +48,7 @@ router.delete('/:id', (req, res, next) => {
   const id = req.params.id;
   Task.findByIdAndDelete(id)
     .then(task => {
-      return Project.findByIdAndUpdate(task.project, {
+      return List.findByIdAndUpdate(task.list, {
         $pull: { tasks: id }
       }).then(() => {
         res.json({ message: 'ok' });

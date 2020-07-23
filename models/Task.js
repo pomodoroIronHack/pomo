@@ -4,10 +4,10 @@ const { Schema, model } = mongoose;
 const taskSchema = new Schema({
   title: String,
   description: String,
-  project: [
+  list: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Project'
+      ref: 'List'
     }
   ]
 });

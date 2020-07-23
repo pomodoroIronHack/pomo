@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Project = require('../models/Project');
+const List = require('../models/List');
 const Task = require('../models/Task');
 router.post('/', (req, res) => {
   // const { title, description, tasks = [] } = req.body;
@@ -8,70 +8,70 @@ router.post('/', (req, res) => {
   const description = req.body.description;
   const tasks = [];
   const owner = req.user._id;
-  Project.create({
+  List.create({
     title: title,
     description: description,
     tasks: tasks,
     owner: owner
   })
-    .then(project => {
-      res.status(201).json(project);
+    .then(list => {
+      res.status(201).json(list);
     })
     .catch(err => {
       res.json(err);
     });
 });
-// GET /api/projects
+// GET /api/lists
 router.get('/', (req, res) => {
-  Project.find()
+  List.find()
     .populate('tasks')
-    .then(projects => {
-      res.status(200).json(projects);
+    .then(lists => {
+      res.status(200).json(lists);
     })
     .catch(err => {
       res.json(err);
     });
 });
-// GET /api/projects/:id
-// return a specific `project` resource with a given id
+// GET /api/lists/:id
+// return a specific `list` resource with a given id
 router.get('/:id', (req, res) => {
   // check if req.params.id is valid, if not respond with a 4xx status code
-  Project.findById(req.params.id)
+  List.findById(req.params.id)
     .populate('tasks')
-    .then(project => {
-      if (!project) {
-        res.status(404).json(project);
+    .then(list => {
+      if (!list) {
+        res.status(404).json(list);
       } else {
-        res.status(200).json(project);
+        res.status(200).json(list);
       }
     })
     .catch(err => {
       res.json(err);
     });
 });
-// PUT /api/projects/:id
+// PUT /api/lists/:id
 router.put('/:id', (req, res) => {
   const { title, description } = req.body;
-  Project.findByIdAndUpdate(
+  List.findByIdAndUpdate(
     req.params.id,
     { title, description },
     // { new: true } ensures that we are getting the updated document in the .then callback
     { new: true }
   )
-    .then(project => {
-      res.status(200).json(project);
+    .then(list => {
+      res.status(200).json(list);
     })
     .catch(err => {
       res.json(err);
     });
 });
-// DELETE /api/projects/:id
+// DELETE /api/lists/:id
 router.delete('/:id', (req, res) => {
-  // delete the project
-  Project.findByIdAndDelete(req.params.id)
-    .then(project => {
-      // Deletes all the documents in the Task collection where the value for the `_id` field is present in the `project.tasks` array
-      return Task.deleteMany({ _id: { $in: project.tasks } }).then(() => {
+  // delete the list
+  List.findByIdAndDelete(req.params.id)
+    .then(list => {
+      // Deletes all the documents in the Task collection where the value for the `_id` field is present in the `list.tasks` array
+      return Task.deleteMany({ _id: { $in: list.tasks } }).then(() => {
         res.status(200).json({ message: 'ok' });
       });
     })
