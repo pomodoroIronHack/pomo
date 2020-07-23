@@ -1,7 +1,5 @@
 import axios from 'axios';
-
 const signup = (username, password) => {
-  console.log("these are the arguments", username, password );
   return axios
     .post('/api/auth/signup', { username, password })
     .then(response => {
@@ -11,7 +9,6 @@ const signup = (username, password) => {
       return err.response.data;
     });
 };
-
 const login = (username, password) => {
   return axios
     .post('/api/auth/login', { username, password })
@@ -22,7 +19,6 @@ const login = (username, password) => {
       return err.response.data;
     });
 };
-
 const logout = () => {
   return axios
     .delete('/api/auth/logout')
@@ -33,5 +29,4 @@ const logout = () => {
       return err.response.data;
     });
 };
-
 export { signup, login, logout }

@@ -9,7 +9,7 @@ export default class List extends Component {
 
   state = {
     list: null,
-    error: null,
+    error: "something is wrong",
     title: '',
     description: '',
     editForm: false,
@@ -89,40 +89,22 @@ export default class List extends Component {
   };
 
   render() {
-    if (this.state.error) return <div>{this.state.error}</div>;
-    if (!this.state.list) return (<></>)
-
-    let allowedToDelete = false;
-    const user = this.props.user;
-    const owner = this.state.list.owner;
-    if (user && user._id === owner) allowedToDelete = true;
+    console.log("STAAAAATE", this.state);
+    
     return (
       <div>
-        <h1>{this.state.list.title}</h1>
-        <p>{this.state.list.description}</p>
 
-        {allowedToDelete && (
-          <Button variant='danger' onClick={this.deleteList}>Delete List</Button>
-        )}
-
-        <Button onClick={this.toggleEditForm}>Show Edit Form</Button>
-        <Button onClick={this.toggleTaskForm}>Show Task Form</Button>
-        {this.state.editForm && (
-          <List
-            {...this.state}
-            handleChange={this.handleChange}
-            handleSubmit={this.handleSubmit}
-          />
-        )}
-        {this.state.taskForm && (
-          <AddTask
-            listId={this.state.list._id}
-            getData={this.getData}
-            hideForm={() => this.setState({ taskForm: false })}
-          />
-        )}
-        {/* <TaskList tasks={this.state.list.tasks} /> */}
+      <h1>hello</h1>
+        
       </div>
     );
   }
 }
+
+// if (this.state.error) return <div>{this.state.error}</div>;
+    // if (!this.state.list) return (<></>)
+
+    // let allowedToDelete = false;
+    // const user = this.props.user;
+    // const owner = this.state.list.owner;
+    // if (user && user._id === owner) allowedToDelete = true;

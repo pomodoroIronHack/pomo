@@ -32,11 +32,11 @@ import './App.css';
 import { Route, Redirect } from 'react-router-dom';
  import Projects from './components/List';
 import Navbar from './components/Navbar';
-// import ProjectDetails from './components/List';
+import List from './components/List';
 // import TaskDetails from './components/TaskDetails';
 import Signup from './components/Signup';
 import Login from './components/Login';
-// import ProtectedRoute from './components/ProtectedRoute';
+ import ProtectedRoute from './components/ProtectedRoute';
 class App extends Component {
   state = {
     user: this.props.user
@@ -52,21 +52,21 @@ class App extends Component {
         <Navbar user={this.state.user} setUser={this.setUser} />
         <Route
           exact
-          path='/projects'
+          path='/lists'
           // component={Projects}
           render={props => {
-            if (this.state.user) return <Projects {...props} />
+            if (this.state.user) return <List {...props} />
             else return <Redirect to='/' />
           }}
         />
-        {/* <ProtectedRoute
+        <ProtectedRoute
           exact
-          path='/projects'
+          path='/lists'
           // this is an additional prop that is taken care of with ...rest
           foo='bar'
           user={this.state.user}
-          component={Projects}
-        /> */}
+          component={List}
+        /> 
         <Route
           exact
           path='/lists/:id'

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const List = require('../models/List');
 const Task = require('../models/Task');
-router.post('/', (req, res) => {
+router.post('/lists', (req, res) => {
   // const { title, description, tasks = [] } = req.body;
   const title = req.body.title;
   const description = req.body.description;
@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
     });
 });
 // GET /api/lists
-router.get('/', (req, res) => {
+router.get('/lists', (req, res) => {
   List.find()
     .populate('tasks')
     .then(lists => {
@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
 });
 // GET /api/lists/:id
 // return a specific `list` resource with a given id
-router.get('/:id', (req, res) => {
+router.get('/lists/:id', (req, res) => {
   // check if req.params.id is valid, if not respond with a 4xx status code
   List.findById(req.params.id)
     .populate('tasks')
@@ -50,7 +50,7 @@ router.get('/:id', (req, res) => {
     });
 });
 // PUT /api/lists/:id
-router.put('/:id', (req, res) => {
+router.put('/lists/:id', (req, res) => {
   const { title, description } = req.body;
   List.findByIdAndUpdate(
     req.params.id,

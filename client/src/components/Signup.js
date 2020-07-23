@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { signup } from '../services/auth';
+
+import 'bootstrap/dist/css/bootstrap.css';
+
 export default class Signup extends Component {
   state = {
     username: '',
@@ -17,6 +20,7 @@ export default class Signup extends Component {
     event.preventDefault();
     const { username, password } = this.state;
     signup(username, password).then(data => {
+      console.log("does it get here");
       if (data.message) {
         this.setState({
           message: data.message,
