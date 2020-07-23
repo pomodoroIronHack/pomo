@@ -11,7 +11,7 @@ const path         = require('path');
 
 
 mongoose
-  .connect('mongodb://localhost/project-x', {useNewUrlParser: true})
+  .connect('mongodb://localhost/list-x', {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -25,6 +25,28 @@ const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
+
+const session = require('express-session');
+const passport = require('passport');
+
+require('./configs/passport');
+
+const MongoStore = require('connect-mongo')(session);
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+
+
+
 
 // Middleware Setup
 app.use(logger('dev'));
@@ -49,7 +71,11 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+// app.locals.title = 'Express - Generated with IronGenerator';
+
+app.use('/api/lists', require('./routes/list'));
+app.use('/api/tasks', require('./routes/task'));
+app.use('/api/auth', require('./routes/auth'));
 
 
 
