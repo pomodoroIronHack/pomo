@@ -37,6 +37,8 @@ import List from './components/List';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
+import FixedNavBar from './components/FixedNavbar'
+
 
 class App extends Component {
   state = {
@@ -73,6 +75,11 @@ class App extends Component {
           path='/lists/:id'
           render={props => <List user={this.state.user} {...props} />}
         />
+         {/* <Route
+          exact
+          path='/fixednavBar'
+          render={props => <FixedNavBar user={this.state.user} {...props} />}
+        /> */}
         <Route
           exact
           path='/tasks/:id'

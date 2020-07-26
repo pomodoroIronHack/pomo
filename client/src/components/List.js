@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 // import List from './List';
 import AddTask from './AddTask';
 // import TaskList from './TaskList';
+import FixedNavBar from './FixedNavbar'
 
 export default class List extends Component {
 
@@ -94,7 +95,7 @@ export default class List extends Component {
     return (
       <div>
 
-      <h1>hello</h1>
+  <FixedNavBar />
         
       </div>
     );
