@@ -7,8 +7,8 @@ import { logout } from '../services/auth';
 
 export default function Navbar(props) {
   return (
-    <Nav className='nav justify-content-center' fixed='bottom' bg='white'>
-      Don't have an account?&nbsp; <Link to='/signup'> Sign up</Link> 
+    <Nav className='nav justify-content-center signup-nav' fixed='bottom'>
+      Don't have an account?&nbsp; <Link to='/signup' className='sign-up-btn'> Sign up</Link> 
     </Nav>
   )
 }

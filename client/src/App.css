@@ -65,3 +65,27 @@
   background-color: snow;
 }
 
+.signup-nav {
+  background-color: snow;
+  border-top: 1px solid lightgray;
+}
+
+.sign-up-btn {
+  color: black;
+  font-weight: bold;
+}
+
+
+.log-btn {
+  padding: 2px 101px 2px 101px;
+}
+
+.input-field {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.signup-page {
+  margin-right: 10px;
+  margin-left: 10px;
+}

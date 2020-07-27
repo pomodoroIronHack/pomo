@@ -44,10 +44,11 @@ export default class Login extends Component {
   render() {
     return (
       <>
-      <Navbar/>
+        
+
         <h2>TOMATO</h2>
         <Form onSubmit={this.handleSubmit}>
-          <Form.Group>
+          <Form.Group className="input-field">
             <Form.Label htmlFor='username' className="login" > </Form.Label>
             <Form.Control className="log"
               type='text'
@@ -58,7 +59,7 @@ export default class Login extends Component {
               placeholder="Username"
             />
           </Form.Group>
-          <Form.Group>
+          <Form.Group className="input-field">
             <Form.Label htmlFor='password'> </Form.Label>
             <Form.Control className="log"
               type='password'
@@ -72,7 +73,7 @@ export default class Login extends Component {
           {this.state.message && (
             <Alert variant='danger'>{this.state.message}</Alert>
           )}
-          <Button type='submit'>Login</Button>
+          <Button type='submit' className="log-btn">Login</Button>
         </Form>
       <Navbar/>
       </>
