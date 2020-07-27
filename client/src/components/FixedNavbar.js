@@ -46,10 +46,14 @@
 //   }
 // }
 
-import React from 'react'
+
 import { Link } from 'react-router-dom';
 import { Navbar as Nav } from 'react-bootstrap';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import React, { Component } from 'react';
+import '/Users/annaweingart/Desktop/pomo/client/src/App.css';
+
+
 
 // import your icons
 
@@ -57,43 +61,46 @@ import { library } from '@fortawesome/fontawesome-svg-core';
  import { faHome } from "@fortawesome/free-regular-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import Logo from './Logo.png';
+
+
 
 
 
 export default function FixedNavbar(props) {
   return (
-    <Nav className='nav justify-content-center ' fixed="bottom"  bg='danger'>
-      {props.user && <Nav.Brand>Welcome {props.user.username} </Nav.Brand>}
+
+    <Nav className='nav justify-content-center' fixed="bottom"  bg='danger'>
+     
       <Nav.Brand>
+      <a href="/lists">
+
+
       
-
-
-        {/* <Link to='/'>Home</Link> */}
+      {/* <img className='Nav-bottom' src={require('/Users/annaweingart/Desktop/pomo/client/src/components/ClockIcon.png')} 
+        // onMouseOver={e => (e.currentTarget.src = {require("/Users/annaweingart/Desktop/pomo/client/src/components/Logo.png"))}
+        onMouseOver={e => (e.currentTarget.src = {Logo})}
+      /> */}
+      </a>
+        {/* <Link className="Nav-bottom-link" to="/lists"> */}
+          {/* <img className='Nav-bottom' src={require('/Users/annaweingart/Desktop/pomo/client/src/components/ClockIcon.png')} /> */}
+        {/* </Link> */}
       </Nav.Brand>
-      {props.user ? (
-        <>
-          <Nav.Brand>
-            <Link to='/lists'>lists</Link>
-          </Nav.Brand>
-          <Nav.Brand>
-            <Link to='/' >Logout</Link>
-          </Nav.Brand>
-        </>
-      ) : (
-        <>
-          <Nav.Brand>
-            <Link to='/signup'>
-            &#128351;
-          </Link>
-           
-          </Nav.Brand>
-          <Nav.Brand>
-          <Link to='/login'>
-              Login
-          </Link>
-          </Nav.Brand>
-          </>
-        )}
+        
+      <Nav.Brand>
+        <Link to="/lists">
+          <img className='Nav-bottom' src={require('/Users/annaweingart/Desktop/pomo/client/src/components/ListIcon.png')} />
+        </Link>
+      </Nav.Brand>
+
+      <Nav.Brand>
+        <Link to="/lists">
+          <img className='Nav-bottom' src={require('/Users/annaweingart/Desktop/pomo/client/src/components/LogoutIcon.png')} />
+        </Link>
+      </Nav.Brand>
+
+
+          
     </Nav>
   )
 }
