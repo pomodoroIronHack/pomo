@@ -50,14 +50,10 @@
   background-color: tomato;
 }
 
-.bottom-nav-icons {
-  color: white;
-  stroke-width: 50%;
-}
-
 
 .bottom-nav-icons > svg  {
   stroke-width: 1;
+  color: white;
 }
 
 .bottom-nav-icons > svg:hover  {
@@ -66,7 +62,7 @@
   
 }
 
-.bottom-nav > svg:active  {
+.bottom-nav-icons > svg:active  {
   fill: white; 
   stroke:tomato;
 }

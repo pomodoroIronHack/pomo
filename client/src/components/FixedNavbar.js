@@ -1,13 +1,21 @@
 import { Link } from 'react-router-dom';
 import { Navbar as Nav } from 'react-bootstrap';
-import { library } from '@fortawesome/fontawesome-svg-core';
 import React, { Component } from 'react';
 import '/Users/annaweingart/Desktop/pomo/client/src/App.css';
 import * as Icon from "react-feather";
-import { faHome } from "@fortawesome/free-regular-svg-icons";
+
+import { logout } from '../services/auth';
+
+
+const handleLogout = props => {
+  logout().then(() => {
+    props.setUser(null);
+  });
+}
 
 
 export default function FixedNavbar(props) {
+
   return (
 
     <Nav className = 'nav bottom-nav justify-content-center' fixed="bottom">
@@ -25,7 +33,7 @@ export default function FixedNavbar(props) {
       </Nav.Brand>
 
       <Nav.Brand>
-        <Link to="/login" className = "bottom-nav-icons">
+        <Link to="/login" className = "bottom-nav-icons" onClick={() => handleLogout(props)}>
           <Icon.ArrowRightCircle/>
         </Link>
       </Nav.Brand>

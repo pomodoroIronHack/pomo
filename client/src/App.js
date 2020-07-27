@@ -53,7 +53,7 @@ class App extends Component {
   render() {
     return (
       <div className="App" >
-        <Navbar user={this.state.user} setUser={this.setUser} />
+        {/* <Navbar user={this.state.user} setUser={this.setUser} /> */}
         <Route
           exact
           path='/lists'
@@ -76,11 +76,11 @@ class App extends Component {
           path='/lists/:id'
           render={props => <List user={this.state.user} {...props} />}
         />
-         <Route
+         {/* <Route
           exact
           path='/fixednavBar'
           render={props => <FixedNavBar user={this.state.user} {...props} />}
-        />
+        /> */}
         <Route
           exact
           path='/tasks/:id'
