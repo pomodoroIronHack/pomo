@@ -38,6 +38,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import FixedNavBar from './components/FixedNavbar'
+import SimpleCountdownTimer from './components/Countdown';
 
 
 class App extends Component {
@@ -75,11 +76,11 @@ class App extends Component {
           path='/lists/:id'
           render={props => <List user={this.state.user} {...props} />}
         />
-         {/* <Route
+         <Route
           exact
           path='/fixednavBar'
           render={props => <FixedNavBar user={this.state.user} {...props} />}
-        /> */}
+        />
         <Route
           exact
           path='/tasks/:id'
@@ -95,6 +96,11 @@ class App extends Component {
           path='/login'
           render={props => <Login setUser={this.setUser} {...props} />}
         />
+        <Route
+          exact
+          path='/countdown'
+          render={props => <SimpleCountdownTimer user={this.state.user} {...props} />}
+          />
       </div>
     );
   }

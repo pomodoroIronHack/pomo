@@ -13,7 +13,7 @@ export default function FixedNavbar(props) {
     <Nav className = 'nav bottom-nav justify-content-center' fixed="bottom">
 
       <Nav.Brand>
-        <Link to="/lists" className = "bottom-nav-icons">
+        <Link to="/countdown" className = "bottom-nav-icons">
           <Icon.Clock/>
         </Link>
       </Nav.Brand>
