@@ -36,7 +36,10 @@ import List from './components/List';
 // import TaskDetails from './components/TaskDetails';
 import Signup from './components/Signup';
 import Login from './components/Login';
- import ProtectedRoute from './components/ProtectedRoute';
+import ProtectedRoute from './components/ProtectedRoute';
+import FixedNavBar from './components/FixedNavbar'
+
+
 class App extends Component {
   state = {
     user: this.props.user
@@ -53,7 +56,7 @@ class App extends Component {
         <Route
           exact
           path='/lists'
-          // component={Projects}
+          // component={Lists}
           render={props => {
             if (this.state.user) return <List {...props} />
             else return <Redirect to='/' />
@@ -70,8 +73,13 @@ class App extends Component {
         <Route
           exact
           path='/lists/:id'
-          render={props => <list user={this.state.user} {...props} />}
+          render={props => <List user={this.state.user} {...props} />}
         />
+         {/* <Route
+          exact
+          path='/fixednavBar'
+          render={props => <FixedNavBar user={this.state.user} {...props} />}
+        /> */}
         <Route
           exact
           path='/tasks/:id'

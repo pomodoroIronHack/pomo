@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 // import List from './List';
 import AddTask from './AddTask';
 // import TaskList from './TaskList';
+import FixedNavBar from './FixedNavbar'
 
 export default class List extends Component {
 
@@ -94,7 +95,7 @@ export default class List extends Component {
     return (
       <div>
 
-      <h1>hello</h1>
+  <FixedNavBar />
         
       </div>
     );
@@ -102,9 +103,9 @@ export default class List extends Component {
 }
 
 // if (this.state.error) return <div>{this.state.error}</div>;
-    // if (!this.state.list) return (<></>)
+//     if (!this.state.list) return (<></>)
 
-    // let allowedToDelete = false;
-    // const user = this.props.user;
-    // const owner = this.state.list.owner;
-    // if (user && user._id === owner) allowedToDelete = true;
+//     let allowedToDelete = false;
+//     const user = this.props.user;
+//     const owner = this.state.list.owner;
+//     if (user && user._id === owner) allowedToDelete = true;

@@ -10,8 +10,10 @@ export default class Login extends Component {
   };
 
   handleChange = event => {
+    console.log(event.target.name)
+    console.log(event.target.value)
     const { name, value } = event.target;
-
+    
     this.setState({
       [name]: value
     });
@@ -59,7 +61,7 @@ export default class Login extends Component {
               type='password'
               name='password'
               value={this.state.password}
-              onChange={this.handleChange}
+              onChange={(e)=>this.handleChange(e)}
               id='password'
             />
           </Form.Group>
