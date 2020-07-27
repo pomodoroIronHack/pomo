@@ -34,7 +34,6 @@
 }
 
 
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -44,15 +43,28 @@
   }
 }
 
-/* a:hover {
-  background-image: url("./components/Logo.png");
-} */
-
-
-a {
-  background-image: '/Users/annaweingart/Desktop/pomo/client/src/components/ClockIcon.png';
+.bottom-nav {
+  background-color: tomato;
 }
 
-a:hover {
-  background: url('/Users/annaweingart/Desktop/pomo/client/src/components/Logo.png');
+.bottom-nav-icons {
+  color: white;
+  stroke-width: 50%;
 }
+
+
+.bottom-nav-icons > svg  {
+  stroke-width: 1;
+}
+
+.bottom-nav-icons > svg:hover  {
+  fill: white; 
+  stroke: tomato; 
+  
+}
+
+.bottom-nav > svg:active  {
+  fill: white; 
+  stroke:tomato;
+}
+
