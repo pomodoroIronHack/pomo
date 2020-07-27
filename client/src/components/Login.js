@@ -46,9 +46,9 @@ export default class Login extends Component {
       <>
         
 
-        <h2>TOMATO</h2>
+        <h2 className='logo'>Tomato</h2>
         <Form onSubmit={this.handleSubmit}>
-          <Form.Group className="input-field">
+          <Form.Group className="input-field boxes">
             <Form.Label htmlFor='username' className="login" > </Form.Label>
             <Form.Control className="log"
               type='text'
@@ -59,7 +59,7 @@ export default class Login extends Component {
               placeholder="Username"
             />
           </Form.Group>
-          <Form.Group className="input-field">
+          <Form.Group className="input-field boxes-two">
             <Form.Label htmlFor='password'> </Form.Label>
             <Form.Control className="log"
               type='password'

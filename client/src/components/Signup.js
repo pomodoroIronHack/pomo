@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { signup } from '../services/auth';
-
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default class Signup extends Component {
@@ -36,12 +35,12 @@ export default class Signup extends Component {
   render() {
     return (
       <>
-        <h2>TOMATO</h2>
+        <h2 className='logo'>Tomato</h2>
         <p>Sign up to create new tasks for your Pomodoro timer</p>
         <div className='signup-page'>
-        <Button type='submit' className="log-btn">Back to Login</Button>
+        <Button href="/login" className="log-btn">Back to Login</Button>
         <Form onSubmit={this.handleSubmit}>
-          <Form.Group className="input-field">
+          <Form.Group className="input-field boxes">
             <Form.Label htmlFor='username'></Form.Label>
             <Form.Control className="log"
               type='text'
