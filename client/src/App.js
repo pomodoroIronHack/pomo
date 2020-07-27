@@ -98,6 +98,11 @@ class App extends Component {
         />
         <Route
           exact
+          path='/login'
+          render={props => <Navbar setUser={this.setUser} {...props} />}
+        />
+        <Route
+          exact
           path='/countdown'
           render={props => <SimpleCountdownTimer user={this.state.user} {...props} />}
           />

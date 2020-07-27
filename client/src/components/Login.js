@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { Form, Button, Alert, Navbar } from 'react-bootstrap';
 import { login } from '../services/auth';
+import NavBar from './Navbar'
 
 export default class Login extends Component {
   state = {
@@ -43,26 +44,29 @@ export default class Login extends Component {
   render() {
     return (
       <>
-        <h2>Login</h2>
+      <Navbar/>
+        <h2>TOMATO</h2>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group>
-            <Form.Label htmlFor='username'>Username: </Form.Label>
-            <Form.Control
+            <Form.Label htmlFor='username' className="login" > </Form.Label>
+            <Form.Control className="log"
               type='text'
               name='username'
               value={this.state.username}
               onChange={this.handleChange}
               id='username'
+              placeholder="Username"
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label htmlFor='password'>Password: </Form.Label>
-            <Form.Control
+            <Form.Label htmlFor='password'> </Form.Label>
+            <Form.Control className="log"
               type='password'
               name='password'
               value={this.state.password}
               onChange={(e)=>this.handleChange(e)}
               id='password'
+              placeholder="Password"
             />
           </Form.Group>
           {this.state.message && (
@@ -70,6 +74,7 @@ export default class Login extends Component {
           )}
           <Button type='submit'>Login</Button>
         </Form>
+      <Navbar/>
       </>
     );
   }

@@ -33,7 +33,7 @@ export default function FixedNavbar(props) {
       </Nav.Brand>
 
       <Nav.Brand>
-        <Link to="/login" className = "bottom-nav-icons" onClick={() => handleLogout(props)}>
+        <Link to="/login" onClick={() => handleLogout(props)} className = "bottom-nav-icons" >
           <Icon.ArrowRightCircle/>
         </Link>
       </Nav.Brand>

@@ -30,12 +30,6 @@
   color: #61dafb;
 }
 
-.Nav-bottom {
-  height: 72px;
-  width: 72px;
-}
-
-
 
 @keyframes App-logo-spin {
   from {
@@ -65,5 +59,9 @@
 .bottom-nav-icons > svg:active  {
   fill: white; 
   stroke:tomato;
+}
+
+.log {
+  background-color: snow;
 }
 
