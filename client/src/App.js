@@ -1,31 +1,3 @@
-// import React from 'react';
-// // import logo from './logo.svg';
-// import './App.css';
-// import Signup from './components/Signup'
-// import {Route} from "react-router-dom"
-// export default class App extends React.Component {
-//   state = {
-//     user: this.props.user
-//   }
-//    setUser = user => {
-//     this.setState({
-//       user: user
-//     })
-//   }
-//   render(){
-//     return (
-//       <div className="App">
-//        <Route
-//           exact
-//           path='/signup'
-//           render={props => <Signup setUser={this.setUser} {...props} />}
-//         />
-//       </div>
-//     );
-//   }
- 
-// }
-
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
@@ -37,8 +9,8 @@ import List from './components/List';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
-import FixedNavBar from './components/FixedNavbar'
-import SimpleCountdownTimer from './components/Countdown';
+import FixedNavBar from './components/FixedNavbar';
+import Countdown from "./components/Countdown";
 
 
 class App extends Component {
@@ -104,7 +76,7 @@ class App extends Component {
         <Route
           exact
           path='/countdown'
-          render={props => <SimpleCountdownTimer user={this.state.user} {...props} />}
+          render={props => <Countdown user={this.state.user} {...props} />}
           />
       </div>
     );
