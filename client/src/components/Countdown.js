@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as Icon from "react-feather";
+import FixedNavBar from './FixedNavbar'
 
 
 
@@ -63,35 +64,31 @@ export default class Countdown extends Component {
   };
 
   render() {
+
+
     const { timerTime, timerStart, timerOn } = this.state;
     let seconds = ("0" + (Math.floor((timerTime / 1000) % 60) % 60)).slice(-2);
     let minutes = ("0" + Math.floor((timerTime / 60000) % 60)).slice(-2);
     let hours = ("0" + Math.floor((timerTime / 3600000) % 60)).slice(-2);
 
     return (
+
+      <div>
+
+      <div className='Countdown-page'>
+
       <div className="Countdown">
-        <div className="Countdown-header">Countdown</div>
-        <div className="Countdown-label">Hours : Minutes : Seconds</div>
+        
+        
         <div className="Countdown-display">
-          <button onClick={() => this.adjustTimer("incHours")}>&#8679;</button>
-          <button onClick={() => this.adjustTimer("incMinutes")}>
-            &#8679;
-          </button>
-          <button onClick={() => this.adjustTimer("incSeconds")}>
-            &#8679;
-          </button>
+          
+         
 
           <div className="Countdown-time">
-            {hours} : {minutes} : {seconds}
+            {minutes} : {seconds}
           </div>
 
-          <button onClick={() => this.adjustTimer("decHours")}>&#8681;</button>
-          <button onClick={() => this.adjustTimer("decMinutes")}>
-            &#8681;
-          </button>
-          <button onClick={() => this.adjustTimer("decSeconds")}>
-            &#8681;
-          </button>
+          
         </div>
 
         {timerOn === false && (timerStart === 0 || timerTime === timerStart) && (
@@ -117,6 +114,9 @@ export default class Countdown extends Component {
               Reset
             </button>
           )}
+      </div>
+      </div>
+      <FixedNavBar />
       </div>
     );
   }

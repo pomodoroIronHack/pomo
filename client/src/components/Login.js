@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Button, Alert, Navbar } from 'react-bootstrap';
 import { login } from '../services/auth';
-import NavBar from './Navbar'
+// import Navbar from './Navbar'
 
 export default class Login extends Component {
   state = {
@@ -47,8 +47,8 @@ export default class Login extends Component {
         
 
         <h2 className='logo'>Tomato</h2>
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Group className="input-field boxes">
+        <Form className='boxes' onSubmit={this.handleSubmit}>
+          <Form.Group className="input-field">
             <Form.Label htmlFor='username' className="login" > </Form.Label>
             <Form.Control className="log"
               type='text'
