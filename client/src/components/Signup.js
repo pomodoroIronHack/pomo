@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { signup } from '../services/auth';
-
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default class Signup extends Component {
@@ -36,33 +35,39 @@ export default class Signup extends Component {
   render() {
     return (
       <>
-        <h2>Signup</h2>
+        <h2 className='logo'>Tomato</h2>
+        <p>Sign up to create new tasks for your Pomodoro timer</p>
+        <div className='signup-page'>
+        <Button href="/login" className="log-btn">Back to Login</Button>
         <Form onSubmit={this.handleSubmit}>
-          <Form.Group>
-            <Form.Label htmlFor='username'>Username: </Form.Label>
-            <Form.Control
+          <Form.Group className="input-field boxes">
+            <Form.Label htmlFor='username'></Form.Label>
+            <Form.Control className="log"
               type='text'
               name='username'
               value={this.state.username}
               onChange={this.handleChange}
               id='username'
+              placeholder="Username"
             />
           </Form.Group>
-          <Form.Group>
-            <Form.Label htmlFor='password'>Password: </Form.Label>
-            <Form.Control
+          <Form.Group className="input-field">
+            <Form.Label htmlFor='password'></Form.Label>
+            <Form.Control className="log"
               type='password'
               name='password'
               value={this.state.password}
               onChange={this.handleChange}
               id='password'
+              placeholder="Password"
             />
           </Form.Group>
           {this.state.message && (
             <Alert variant='danger'>{this.state.message}</Alert>
           )}
-          <Button type='submit'>Signup</Button>
+          <Button type='submit' className="log-btn">Signup</Button>
         </Form>
+        </div>
       </>
     );
   }

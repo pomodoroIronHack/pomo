@@ -1,3 +1,6 @@
+@import "~react-component-countdown-timer/lib/styles.css";
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+
 .App {
   text-align: center;
 }
@@ -28,12 +31,6 @@
   color: #61dafb;
 }
 
-.Nav-bottom {
-  height: 72px;
-  width: 72px;
-}
-
-
 
 @keyframes App-logo-spin {
   from {
@@ -44,15 +41,67 @@
   }
 }
 
-/* a:hover {
-  background-image: url("./components/Logo.png");
+.logo { 
+  font-family: 'Grand Hotel', cursive, bold;
+  font-size: 4em;
+  margin-top: 12px;
+}
+
+.bottom-nav {
+  background-color: tomato;
+}
+
+
+.bottom-nav-icons > svg  {
+  stroke-width: 1;
+  color: white;
+}
+
+.bottom-nav-icons > svg:hover  {
+  fill: white; 
+  stroke: tomato; 
+  
+}
+
+.bottom-nav-icons > svg:active  {
+  fill: white; 
+  stroke:tomato;
+}
+
+/* .form-group {
+  margin-bottom: 1px;
 } */
 
-
-a {
-  background-image: '/Users/annaweingart/Desktop/pomo/client/src/components/ClockIcon.png';
+.log {
+  background-color: snow;
 }
 
-a:hover {
-  background: url('/Users/annaweingart/Desktop/pomo/client/src/components/Logo.png');
+.signup-nav {
+  background-color: snow;
+  border-top: 1px solid lightgray;
 }
+
+.sign-up-btn {
+  color: black;
+  font-weight: bold;
+}
+
+
+.log-btn {
+  padding: 2px 101px 2px 101px;
+}
+
+.input-field {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.signup-page {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.boxes {
+  margin-bottom: 0px;
+}
+
