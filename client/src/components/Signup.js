@@ -36,11 +36,11 @@ export default class Signup extends Component {
     return (
       <>
         <h2 className='logo'>Tomato</h2>
-        <p>Sign up to create new tasks for your Pomodoro timer</p>
+        <p className='p'>Sign up to create new tasks for your Pomodoro timer</p>
         <div className='signup-page'>
         <Button href="/login" className="log-btn">Back to Login</Button>
         <Form onSubmit={this.handleSubmit}>
-          <Form.Group className="input-field boxes">
+          <Form.Group className="input-field">
             <Form.Label htmlFor='username'></Form.Label>
             <Form.Control className="log"
               type='text'
