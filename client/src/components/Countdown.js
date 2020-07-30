@@ -1,123 +1,110 @@
 import React, { Component } from "react";
 import * as Icon from "react-feather";
-import FixedNavBar from './FixedNavbar'
+import FixedNavbar from './FixedNavbar'
+import { Navbar as Nav } from 'react-bootstrap';
 
-
+const logicalFlow = [ 25,  5,  25,  5, 25,  20]
+// const logicalFlow = [ 1,  2,  3,  4, 5,  6]
 
 export default class Countdown extends Component {
 
   state = {
     timerOn: false,
     timerStart: 0,
-    timerTime: 0
+    timerTime: 0,
+    seconds: "00",
+    timer: null,
+    minutes: 25
   };
 
   startTimer = () => {
-    this.setState({
+    this.setState( {
       timerOn: true,
-      timerTime: this.state.timerTime,
-      timerStart: this.state.timerTime
-    });
-    this.timer = setInterval(() => {
-      const newTime = this.state.timerTime - 10;
-      if (newTime >= 0) {
-        this.setState({
-          timerTime: newTime
-        });
-      } else {
-        clearInterval(this.timer);
-        this.setState({ timerOn: false });
-        alert("Countdown ended");
-      }
-    }, 10);
-  };
-
-  stopTimer = () => {
-    clearInterval(this.timer);
-    this.setState({ timerOn: false });
-  };
-  resetTimer = () => {
-    if (this.state.timerOn === false) {
+timer: setInterval(()=>{
+    
+  if (!this.state.timerOn) {
+    this.setState( {
+      timerOn: true
+    })
+    return
+  }
+  if (this.state.timerOn) {
+    
+  console.log(this.state.timerTime)
+  if (this.state.seconds === "00" && this.state.minutes >= 1) {
+    return this.setState({minutes: this.state.minutes -1, seconds: 59})
+  }
+  if (this.state.seconds === 0 && this.state.minutes >0) {
+    this.setState({
+      minutes: this.state.minutes -1, seconds: 59
+    })
+  }
+  if (this.state.seconds >=1) {
+    this.setState({
+      seconds: this.state.seconds -1
+    })
+  }
+  if (this.state.seconds === 0 && this.state.minutes === 0 ) {
+    this.setState({
+      timerStart: this.state.timerStart == logicalFlow.length -1? 0 : this.state.timerStart +1
+    }, ()=> {
       this.setState({
-        timerTime: this.state.timerStart
-      });
-    }
-  };
-
-  adjustTimer = input => {
-    const { timerTime, timerOn } = this.state;
-    if (!timerOn) {
-      if (input === "incHours" && timerTime + 3600000 < 216000000) {
-        this.setState({ timerTime: timerTime + 3600000 });
-      } else if (input === "decHours" && timerTime - 3600000 >= 0) {
-        this.setState({ timerTime: timerTime - 3600000 });
-      } else if (input === "incMinutes" && timerTime + 60000 < 216000000) {
-        this.setState({ timerTime: timerTime + 60000 });
-      } else if (input === "decMinutes" && timerTime - 60000 >= 0) {
-        this.setState({ timerTime: timerTime - 60000 });
-      } else if (input === "incSeconds" && timerTime + 1000 < 216000000) {
-        this.setState({ timerTime: timerTime + 1000 });
-      } else if (input === "decSeconds" && timerTime - 1000 >= 0) {
-        this.setState({ timerTime: timerTime - 1000 });
-      }
-    }
-  };
-
-  render() {
-
-
-    const { timerTime, timerStart, timerOn } = this.state;
-    let seconds = ("0" + (Math.floor((timerTime / 1000) % 60) % 60)).slice(-2);
-    let minutes = ("0" + Math.floor((timerTime / 60000) % 60)).slice(-2);
-    let hours = ("0" + Math.floor((timerTime / 3600000) % 60)).slice(-2);
-
-    return (
-
-      <div>
-
-      <div className='Countdown-page'>
-
-      <div className="Countdown">
-        
-        
-        <div className="Countdown-display">
-          
-         
-
-          <div className="Countdown-time">
-            {minutes} : {seconds}
-          </div>
-
-          
-        </div>
-
-        {timerOn === false && (timerStart === 0 || timerTime === timerStart) && (
-          <button className="Button-start" onClick={this.startTimer}>
-          <Icon.Play/>
-          </button>
-        )}
-        {timerOn === true && timerTime >= 1000 && (
-          <button className="Button-stop" onClick={this.stopTimer}>
-            Stop
-          </button>
-        )}
-        {timerOn === false &&
-          (timerStart !== 0 && timerStart !== timerTime && timerTime !== 0) && (
-            <button className="Button-start" onClick={this.startTimer}>
-              Resume
-            </button>
-          )}
-
-        {(timerOn === false || timerTime < 1000) &&
-          (timerStart !== timerTime && timerStart > 0) && (
-            <button className="Button-reset" onClick={this.resetTimer}>
-              Reset
-            </button>
-          )}
-      </div>
-      </div>
-      <FixedNavBar />
-      </div>
-    );
+        minutes: logicalFlow[this.state.timerStart] - 1, seconds: 59
+      })
+    })
   }
 }
+  }, 20 )
+    })
+    
+  }
+
+
+  stopTimer = () => {
+    clearInterval(this.state.timer);
+    this.setState({ timerOn: false });
+  };
+  
+
+  resetTimer = () => {
+    // return this.stopTimer()
+    this.stopTimer()
+    this.setState({
+      minutes: logicalFlow[this.state.timerStart], seconds: "00",
+
+    })
+    // if (this.state.timerOn === false) {
+    //   this.stopTimer();
+    //   this.setState({
+    //     timerStart: 0
+    //   });
+    // }
+  };
+
+  
+
+    render() {
+
+      const { timerTime, timerStart, timerOn } = this.state;
+      let seconds = ("0" + (Math.floor((timerTime / 100) % 60) % 60)).slice(-2);
+      let minutes = ("0" + Math.floor((timerTime / 6000) % 60)).slice(-2);
+  
+      return (
+          <div className='divdiv'>
+          <div className="Countdown">
+            
+            {/* <button onClick={this.resetTimer}> CLICK TO RESET</button> */}
+          <div className="Countdown-time">
+            {this.state.minutes} : {this.state.seconds}  
+          </div>
+          <button className='Button-start' onClick={this.state.timerOn ? this.stopTimer : this.startTimer}> {this.state.timerOn ? <Icon.Pause/> : <Icon.Play/>}</button>
+        </div>
+        <FixedNavbar/>
+        </div>
+      );
+    }
+  }
+  
+  
+
+    
