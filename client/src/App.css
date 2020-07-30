@@ -1,5 +1,5 @@
 @import "~react-component-countdown-timer/lib/styles.css";
-@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap");
 
 .App {
   text-align: center;
@@ -31,7 +31,6 @@
   color: #61dafb;
 }
 
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -41,34 +40,31 @@
   }
 }
 
-.logo { 
-  font-family: 'Grand Hotel', cursive, bold;
+.logo {
+  font-family: "Grand Hotel", cursive, bold;
   font-size: 4em;
   margin-top: 12px;
   position: relative;
-  left: -8%;
+  /* left: -8%; */
 }
-
 
 .bottom-nav {
   background-color: tomato;
 }
 
-
-.bottom-nav-icons > svg  {
+.bottom-nav-icons > svg {
   stroke-width: 1;
   color: white;
 }
 
-.bottom-nav-icons > svg:hover  {
-  fill: white; 
-  stroke: tomato; 
-  
+.bottom-nav-icons > svg:hover {
+  fill: white;
+  stroke: tomato;
 }
 
-.bottom-nav-icons > svg:active  {
-  fill: white; 
-  stroke:tomato;
+.bottom-nav-icons > svg:active {
+  fill: white;
+  stroke: tomato;
 }
 
 /* .form-group {
@@ -89,7 +85,6 @@
   font-weight: bold;
 }
 
-
 .log-btn {
   padding: 2px 101px 2px 101px;
   background-color: tomato;
@@ -106,62 +101,67 @@
   margin-right: 10px;
   margin-left: 10px;
   position: relative;
-  left: -7%;
+  /* left: -7%; */
 }
 
 .boxes {
   margin-bottom: 0px;
   position: relative;
-  left: -7%;
+  /* left: -7%; */
 }
 
 /* copied from medium repo */
 
-
-  
-  
+.divdiv {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .Countdown {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding-top: 10px;
-  /* border-radius: 50%;
-  width: 200px;
-  height: 200px; */
   border-color: tomato;
 }
 
-
 .Countdown-time {
-  font-size: 36px;
+  font-size: 50px;
   color: tomato;
   margin-bottom: 55px;
+  border-style: solid;
+  border-color: coral;
+  border-width: 4px;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-  /* margin: 5px 0; */
 
+.Countdown-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 
 .Button-start {
-  border: none; 
-  background-color: white;
-  /* position: relative;  */
-  /* margin: 5px 0; */
-  display: flex; 
-  justify-content: center;
-  
+  background-color: tomato;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  font-size: 20px;
 }
 
-.Button-start > svg {
-  color: tomato;
-  stroke-width: 1;
-  width: 200%;
-  height: 200%;
-  position: relative;
-  font-size: 72px;
-}
-
-.divdiv {
-  flex-direction: column;
-  justify-content: center;
+.btn-reset {
+  background-color: tomato;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  font-size: 20px;
 }

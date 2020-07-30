@@ -62,7 +62,7 @@ export default class Countdown extends Component {
             );
           }
         }
-      }, 20),
+      }, 1000),
     });
   };
 
@@ -97,17 +97,19 @@ export default class Countdown extends Component {
           <div className="Countdown-time">
             {this.state.minutes} : {this.state.seconds}
           </div>
-          <button
-            className="Button-start"
-            onClick={this.state.timerOn ? this.stopTimer : this.startTimer}
-          >
-            {" "}
-            {this.state.timerOn ? <Icon.Pause /> : <Icon.Play />}
-          </button>
+          <div className="Countdown-btns">
+            <button
+              className="Button-start"
+              onClick={this.state.timerOn ? this.stopTimer : this.startTimer}
+            >
+              {" "}
+              {this.state.timerOn ? "Pause" : "Play"}
+            </button>
+            <button className="btn-reset" onClick={this.resetTimer}>
+              Reset
+            </button>
+          </div>
         </div>
-        <button className="btn-reset" onClick={this.resetTimer}>
-          RESET
-        </button>
         <FixedNavbar />
       </div>
     );

@@ -155,6 +155,11 @@ class App extends Component {
           />
           <Route
             exact
+            path="/"
+            render={(props) => <Login setUser={this.setUser} {...props} />}
+          />
+          <Route
+            exact
             path="/login"
             render={(props) => <Navbar setUser={this.setUser} {...props} />}
           />
