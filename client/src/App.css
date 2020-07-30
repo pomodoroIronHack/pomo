@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap");
 
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -14,6 +14,10 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+p {
+  text-align: center;
 }
 
 .App-header {
@@ -45,7 +49,7 @@
   font-size: 4em;
   margin-top: 12px;
   position: relative;
-  /* left: -8%; */
+  text-align: center;
 }
 
 .bottom-nav {
@@ -86,6 +90,7 @@
 }
 
 .log-btn {
+  width: 100%;
   padding: 2px 101px 2px 101px;
   background-color: tomato;
   border: none;
@@ -93,42 +98,45 @@
 }
 
 .input-field {
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .signup-page {
   margin-right: 10px;
   margin-left: 10px;
-  position: relative;
-  /* left: -7%; */
 }
 
 .boxes {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 0px;
-  position: relative;
+  /* position: relative; */
   /* left: -7%; */
 }
 
 /* copied from medium repo */
 
 .divdiv {
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+}
+
+.divdiv {
+  margin-top: 50px;
 }
 
 .Countdown {
   display: flex;
   flex-direction: column;
-  align-items: center;
   border-color: tomato;
 }
 
 .Countdown-time {
   font-size: 50px;
   color: tomato;
-  margin-bottom: 55px;
   border-style: solid;
   border-color: coral;
   border-width: 4px;
@@ -143,7 +151,7 @@
 .Countdown-btns {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .Button-start {
@@ -154,6 +162,7 @@
   width: 100px;
   height: 100px;
   font-size: 20px;
+  margin-right: 100px;
 }
 
 .btn-reset {
@@ -164,4 +173,22 @@
   width: 100px;
   height: 100px;
   font-size: 20px;
+}
+
+.custom-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.custom-switch {
+  padding-left: 0px;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
 }
