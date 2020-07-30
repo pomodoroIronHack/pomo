@@ -10,7 +10,9 @@ const logger = require("morgan");
 const path = require("path");
 
 mongoose
-  .connect("mongodb://localhost/list-x", { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/list-x", {
+    useNewUrlParser: true,
+  })
   .then((x) => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -64,7 +66,7 @@ app.use(
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/client/build")));
 app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
 // default value for title local
@@ -76,5 +78,8 @@ app.use("/api/auth", require("./routes/auth"));
 
 const index = require("./routes/index");
 app.use("/", index);
-
+app.use((req, res) => {
+  // If no routes match, send them the React HTML.
+  res.sendFile(__dirname + "/client/build/index.html");
+});
 module.exports = app;
