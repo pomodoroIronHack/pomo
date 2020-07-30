@@ -62,7 +62,7 @@ export default class Countdown extends Component {
             );
           }
         }
-      }, 20),
+      }, 1000),
     });
   };
 
@@ -92,23 +92,27 @@ export default class Countdown extends Component {
     let minutes = ("0" + Math.floor((timerTime / 60000) % 60)).slice(-2);
 
     return (
-      <div className="divdiv">
-        <div className="Countdown">
-          <div className="Countdown-time">
-            {this.state.minutes} : {this.state.seconds}
+      <div className="login-container">
+        <div className="divdiv">
+          <div className="Countdown">
+            <div className="Countdown-time">
+              {this.state.minutes} : {this.state.seconds}
+            </div>
+            <div className="Countdown-btns">
+              <button
+                className="Button-start"
+                onClick={this.state.timerOn ? this.stopTimer : this.startTimer}
+              >
+                {" "}
+                {this.state.timerOn ? "Pause" : "Play"}
+              </button>
+              <button className="btn-reset" onClick={this.resetTimer}>
+                Reset
+              </button>
+            </div>
           </div>
-          <button
-            className="Button-start"
-            onClick={this.state.timerOn ? this.stopTimer : this.startTimer}
-          >
-            {" "}
-            {this.state.timerOn ? <Icon.Pause /> : <Icon.Play />}
-          </button>
+          <FixedNavbar />
         </div>
-        <button className="btn-reset" onClick={this.resetTimer}>
-          RESET
-        </button>
-        <FixedNavbar />
       </div>
     );
   }

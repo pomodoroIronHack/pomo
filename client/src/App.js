@@ -150,19 +150,14 @@ class App extends Component {
           />
           <Route
             exact
-            path="/login"
+            path="/"
             render={(props) => <Login setUser={this.setUser} {...props} />}
           />
           <Route
             exact
-            path="/login"
+            path="/"
             render={(props) => <Navbar setUser={this.setUser} {...props} />}
           />
-          {/* <Route
-          exact
-          path='/login'
-          render={props => < setUser={this.setUser} {...props} />}
-        /> */}
           <Route
             exact
             path="/countdown"
