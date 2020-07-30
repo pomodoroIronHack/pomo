@@ -1,82 +1,84 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Button } from 'react-bootstrap';
+import { Form, Button } from "react-bootstrap";
 // import List from './List';
-import AddTask from './AddTask';
+import AddTask from "./AddTask";
 // import TaskList from './TaskList';
-import FixedNavBar from './FixedNavbar'
+import FixedNavBar from "./FixedNavbar";
 
 export default class List extends Component {
-
   state = {
     list: null,
     error: "something is wrong",
-    title: '',
-    description: '',
+    title: "",
+    description: "",
     editForm: false,
-    taskForm: false
-  }
+    taskForm: false,
+    addTask: "",
+  };
 
   deleteList = () => {
     const id = this.props.match.params.id;
-    axios.delete(`/api/lists/${id}`)
-      .then(() => {
-        this.props.history.push('/lists');
-      })
-  }
-
-  handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
+    axios.delete(`/api/lists/${id}`).then(() => {
+      this.props.history.push("/lists");
     });
+  };
+
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    console.log("hello", name, value);
+    this.setState({
+      [name]: value,
+    });
+    console.log("this is the state", this.state);
   };
 
   toggleTaskForm = () => {
     this.setState({
-      taskForm: !this.state.taskForm
-    })
-  }
+      taskForm: !this.state.taskForm,
+    });
+  };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     const id = this.props.match.params.id;
-    axios.put(`/api/lists/${id}`, {
-      title: this.state.title,
-      description: this.state.description
-    })
-      .then(response => {
+    axios
+      .post(`http://localhost:5555/api/lists/`, {
+        title: this.state.title,
+        // description: this.state.description,
+      })
+      .then((response) => {
         this.setState({
           list: response.data,
           title: response.data.title,
           description: response.data.description,
-          editForm: false
-        })
+          editForm: false,
+        });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
-      })
-  }
+      });
+  };
 
   toggleEditForm = () => {
     this.setState({
-      editForm: !this.state.editForm
-    })
-  }
+      editForm: !this.state.editForm,
+    });
+  };
 
   getData = () => {
     const id = this.props.match.params.id;
     axios
       .get(`/api/lists/${id}`)
-      .then(response => {
+      .then((response) => {
         console.log(response.data);
         this.setState({
           list: response.data,
           title: response.data.title,
-          description: response.data.description
+          description: response.data.description,
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err.response);
         // handle err.response depending on err.response.status
         if (err.response.status === 404) {
@@ -90,13 +92,26 @@ export default class List extends Component {
   };
 
   render() {
-    console.log("STAAAAATE", this.state);
-    
     return (
       <div>
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Group className="input-field flex">
+            <Form.Control
+              className="log remove-border"
+              type="text"
+              name="title"
+              value={this.state.title}
+              onChange={this.handleChange}
+              id="addTask"
+              placeholder="New task title"
+            />
+            <span className="add-task" onClick={this.handleSubmit}>
+              &#43;
+            </span>
+          </Form.Group>
+        </Form>
 
-  <FixedNavBar />
-        
+        <FixedNavBar />
       </div>
     );
   }

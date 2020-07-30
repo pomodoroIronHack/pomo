@@ -117,118 +117,51 @@
 
 /* copied from medium repo */
 
-.Countdown-page {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: 50px;
-  left: -20px;
-}
 
-.Timers {
-  display: flex;
-  justify-content: center;
-}
-@media (max-width: 900px) {
-  .Timers {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-@media (max-width: 900px) {
-  .Stopwatch {
-    margin-bottom: 40px;
-  }
-}
-.Countdown,
-.Stopwatch {
-  margin-left: 30px;
-  margin-right: 30px;
-  border: 3px solid tomato;
-  border-radius: 4px;
-  padding: 20px;
- 
   
   
-}
+
 .Countdown {
-  padding-top: 10px;
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  
-}
-
-.Countdown-header,
-.Stopwatch-header {
-  font-size: 40px;
-  font-weight: bold;
-}
-
-
-
-.Stopwatch button {
-  padding: 12px 32px;
-  font-size: 20px;
-}
-.Stopwatch-display {
-  padding: 40px 0;
-  font-size: 48px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  
+  align-items: center;
+  padding-top: 10px;
+  /* border-radius: 50%;
+  width: 200px;
+  height: 200px; */
+  border-color: tomato;
 }
 
-.Countdown-display {
-  margin-top: 5px;
-  margin-bottom: 20px;
-  color: tomato;
-}
-.Countdown-display button {
-  margin: 0 15px;
-  border: solid 1px transparent;
-  border-radius: 2px;
-  padding: 4px 16px;
-  color: #ffffff;
 
-  font-size: 16px;
-}
-.Countdown-display button:hover {
-  background-color: #106ba3;
-}
-.Countdown-label {
-  font-size: 18px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
 .Countdown-time {
   font-size: 36px;
-  margin: 5px 0;
+  color: tomato;
+  margin-bottom: 55px;
 }
+  /* margin: 5px 0; */
+
 
 .Button-start {
-  border: 0; 
+  border: none; 
   background-color: white;
-  position: relative; 
-  top: 35px;
-  left: 5px;
+  /* position: relative;  */
+  /* margin: 5px 0; */
+  display: flex; 
+  justify-content: center;
+  
 }
 
 .Button-start > svg {
   color: tomato;
   stroke-width: 1;
+  width: 200%;
+  height: 200%;
+  position: relative;
+  font-size: 72px;
 }
 
-.p{
-  position: relative;
-  left: -8%;
-}
-.log-btn:hover{
-  background-color: tomato;
-  opacity: 0.7;
-}
-
-.Countdown-time {
-  position: relative;
-  top: 50px;
+.divdiv {
+  flex-direction: column;
+  justify-content: center;
 }
