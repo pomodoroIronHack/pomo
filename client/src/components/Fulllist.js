@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import * as Icon from "react-feather";
+
 class Fulllist extends Component {
   state = {
     lists: this.props.lists,
@@ -13,9 +15,8 @@ class Fulllist extends Component {
       <div>
         {this.props.lists.map((task) => (
           <div>
-            <span onClick={() => this.props.deleteList(task._id)}>&times;</span>
-            <h1>{task.title}</h1>
-            <span>{task.description}</span>
+            <h3 className='moon'>{task.title} <span onClick={() => this.props.deleteList(task._id)}>&times;</span> </h3>
+            {/* <span className='moon'>{task.description}</span> */}
           </div>
         ))}
       </div>

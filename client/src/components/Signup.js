@@ -73,7 +73,7 @@ export default class Signup extends Component {
                 <Alert variant="danger">{this.state.message}</Alert>
               )}
               <Button type="submit" className="log-btn">
-                Signup
+                Sign up
               </Button>
             </Form>
           </div>

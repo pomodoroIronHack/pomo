@@ -104,7 +104,7 @@ export default class Countdown extends Component {
                 onClick={this.state.timerOn ? this.stopTimer : this.startTimer}
               >
                 {" "}
-                {this.state.timerOn ? "Pause" : "Play"}
+                {this.state.timerOn ? "Pause" : "Start"}
               </button>
               <button className="btn-reset" onClick={this.resetTimer}>
                 Reset
