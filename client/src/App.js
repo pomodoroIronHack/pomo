@@ -12,6 +12,8 @@ import FixedNavBar from "./components/FixedNavbar";
 import SimpleCountdownTimer from "./components/Countdown";
 import Switch from "react-bootstrap/esm/Switch";
 import Navbar from "./components/Navbar";
+import Settings from "./components/Settings";
+
 class App extends Component {
   state = {
     user: this.props.user,
@@ -73,6 +75,13 @@ class App extends Component {
             path="/countdown"
             render={(props) => (
               <SimpleCountdownTimer user={this.state.user} {...props} />
+            )}
+          />
+          <Route
+            exact
+            path="/settings"
+            render={(props) => (
+              <Settings user={this.state.user} {...props} />
             )}
           />
         </Switch>

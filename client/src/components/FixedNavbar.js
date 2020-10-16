@@ -64,6 +64,27 @@ export default class FixedNavbar extends Component {
             )}
           </Link>
         </Nav.Brand>
+
+        <Nav.Brand>
+          <Link
+            to="/settings"
+            className="bottom-nav-icons"
+            onClick={() => this.handleClick("settings")}
+          >
+            {this.state.button === "settings" ? (
+              <Icon.Settings
+                style={{ fill: "white", stroke: "tomato" }}
+                size={35}
+              />
+            ) : (
+              <Icon.Settings
+                style={{ fill: "tomato", stroke: "white" }}
+                size={35}
+              />
+            )}
+          </Link>
+        </Nav.Brand>
+
         <Nav.Brand>
           <Link
             to="/"
