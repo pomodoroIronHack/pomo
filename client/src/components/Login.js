@@ -45,7 +45,7 @@ export default class Login extends Component {
     return (
       <>
         <div className="login-container">
-          <h2 className="logo">Tomato</h2>
+          <h2 className="logo">Tomatoooo</h2>
           <Form className="boxes" onSubmit={this.handleSubmit}>
             <Form.Group className="input-field">
               <Form.Label htmlFor="username" className="login">
