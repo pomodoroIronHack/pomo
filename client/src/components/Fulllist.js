@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import * as Icon from "react-feather";
+import { render } from 'react-dom';
+// Import the react-swipe-to-delete-component
+import SwipeToDelete from 'react-swipe-to-delete-component';
 
 class Fulllist extends Component {
   state = {
@@ -13,11 +16,25 @@ class Fulllist extends Component {
   render() {
     return (
       <div>
+      
         {this.props.lists.map((task) => (
-          <div>
-            <h3 className='moon'>{task.title} <span onClick={() => this.props.deleteList(task._id)}>&times;</span> </h3>
-            {/* <span className='moon'>{task.description}</span> */}
-          </div>
+
+
+          
+
+
+          
+          
+        
+          
+           
+
+
+            <h3 className='moon'>{task.title} <span onClick={() => this.props.deleteList(task._id)}>&times;</span> </h3> 
+           
+          
+
+
         ))}
       </div>
     );

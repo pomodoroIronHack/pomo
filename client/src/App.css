@@ -276,3 +276,38 @@ p {
   display: flex; 
   justify-content: space-around;
 }
+
+.swipeable-list {
+
+  display: block;
+  width: 100%;
+  background-color: pink;
+}
+
+.swipeable-list-item {
+  display: block;
+  width: 100%;
+}
+
+.swipeable-list > div {
+
+  display: block;
+  width: 100%;
+  background-color: red;
+}
+
+.swipeable-list-item >div {
+  display: block;
+  width: 100%;
+}
+
+.cool-thing-yo {
+  display: block;
+  width: 100%;
+  background-color: yellow;
+}
+
+.coolest-page {
+  display: block;
+  width: 100%;
+}
