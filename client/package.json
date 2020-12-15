@@ -20,10 +20,7 @@
     "react-feather": "^2.0.8",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.1",
-    "react-swipe-to-delete": "^0.1.7",
-    "react-swipe-to-delete-component": "^0.5.5",
-    "styled-components": "^5.1.1",
-    "swiped": "^0.1.4"
+    "styled-components": "^5.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -45,5 +42,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
 }

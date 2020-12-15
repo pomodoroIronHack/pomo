@@ -6,7 +6,7 @@ import AddTask from "./AddTask";
 import FixedNavBar from "./FixedNavbar";
 import Fulllist from "./Fulllist";
 import * as Icon from "react-feather";
-import Swiped from 'swiped'
+
 
 export default class List extends Component {
   state = {
