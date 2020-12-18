@@ -1,62 +1,38 @@
 import React, { Component } from "react";
 import { render } from 'react-dom';
+// import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 
-import { SwipeableList, SwipeableListItem } from '@sandstreamdev/react-swipeable-list';
-import '@sandstreamdev/react-swipeable-list/dist/styles.css';
+// const logicalFlow = [25, 5, 25, 5, 25, 20];
 
-export default class how extends Component {
+export default class Animated extends Component {
 
-
-render() {
-
-  return (
-
-<div className="coolest-page">
-<SwipeableList clssName="cool-list">
-
-  <SwipeableListItem className="cool-list-item"
-    swipeLeft={{
-      content: <div>DELETE</div>,
-      action: () => console.info('swipe action triggered')
-    }}
-    swipeRight={{
-      content: <div>Revealed content during swipe</div>,
-      action: () => console.info('swipe action triggered')
-    }}
-  >
-    <div class="cool-thing-yo">This is cool</div>
-  </SwipeableListItem>
+render () {
 
 
-  <SwipeableListItem className="cool-list-item"
-    swipeLeft={{
-      content: <div>Revealed content during swipe</div>,
-      action: () => console.info('swipe action triggered')
-    }}
-    swipeRight={{
-      content: <div>Revealed content during swipe</div>,
-      action: () => console.info('swipe action triggered')
-    }}
-  >
-    <div>Item name</div>
-  </SwipeableListItem>
+return (
 
+<div>
 
-
-
-
-</SwipeableList>
+<div class="base-timer">
+  <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g class="base-timer__circle">
+      <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
+    </g>
+  </svg>
+  <span>
+    {/* <!-- Remaining time label --> */}
+  </span>
 </div>
 
 
+</div>
 
 
+)
 
-  )
-
+}
 
 }
 
 
-}
-
+  
