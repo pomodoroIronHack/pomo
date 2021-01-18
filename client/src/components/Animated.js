@@ -19,10 +19,9 @@ export default class Animated extends Component {
     minutes: 20,
   };
 
-
+ 
 
   startTimer = () => {
-    this.setCircleDasharray();
     this.setState({
       timerOn: true,
       timer: setInterval(() => {
@@ -88,18 +87,8 @@ export default class Animated extends Component {
 
 
   
-calculateTimeFraction = () => {
-  return 20 / 20;
-}
 
-setCircleDasharray = () => {
-  const circleDasharray = `${(
-    this.calculateTimeFraction() * 283
-  ).toFixed(0)} 283`;
-  document
-    .getElementById("base-timer-path-remaining")
-    .setAttribute("stroke-dasharray", circleDasharray);
-}
+
 
 
   render() {
@@ -108,14 +97,7 @@ setCircleDasharray = () => {
     let seconds = ("0" + (Math.floor((timerTime / 1000) % 60) % 60)).slice(-2);
     let minutes = ("0" + Math.floor((timerTime / 60000) % 60)).slice(-2);
 
-    // Start with an initial value of 20 seconds
-    const TIME_LIMIT = 20;
-
-    // Initially, no time has passed, but this will count up
-    // and subtract from the TIME_LIMIT
-    let timePassed = 0;
-    let timeLeft = TIME_LIMIT;
-
+   
 
     return (
 

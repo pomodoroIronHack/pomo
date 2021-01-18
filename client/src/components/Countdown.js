@@ -110,7 +110,9 @@ export default class Countdown extends Component {
   
 
     return (
-      <div className="login-container">
+      <div class="container onetwo no-gutters">
+      <div class="row onetwothree no-gutters">
+      <div className="login-container col-sm no-gutters">
         <div className="divdiv">
           <div className="Countdown">
             <div className="Countdown-time">
@@ -122,7 +124,7 @@ export default class Countdown extends Component {
                 onClick={this.state.timerOn ? this.stopTimer : this.startTimer}
               >
                 {" "}
-                {this.state.timerOn ? "Pause" : "Start"}
+                {this.state.timerOn ? <Icon.Pause size={85}/>  : <Icon.Play size={85}/> }
               </button>
               <button className="btn-reset" onClick={this.resetTimer}>
                 Reset
@@ -132,6 +134,9 @@ export default class Countdown extends Component {
           <FixedNavbar />
         </div>
       </div>
+      </div>
+      </div>
+
     );
   }
 }

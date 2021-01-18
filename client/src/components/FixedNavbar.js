@@ -25,7 +25,8 @@ export default class FixedNavbar extends Component {
   // console.log("this.props ", this.props)
   render() {
     return (
-      <Nav className="nav bottom-nav justify-content-center" fixed="bottom">
+      
+      <Nav className="nav bottom-nav" fixed="bottom">
         <Nav.Brand>
           <Link
             to="/countdown"
@@ -35,16 +36,19 @@ export default class FixedNavbar extends Component {
             {this.state.button === "countdown" ? (
               <Icon.Clock
                 style={{ fill: "white", stroke: "tomato" }}
-                size={35}
+                size={92}
               />
             ) : (
               <Icon.Clock
-                style={{ fill: "tomato", stroke: "white" }}
-                size={35}
+                style={{ fill: "#ff63479d", stroke: "white" }}
+                size={92}
               />
             )}
+            {/* <span className="bottom-nav-icon-links">Count</span> */}
           </Link>
+          
         </Nav.Brand>
+        
         <Nav.Brand>
           <Link
             to="/lists"
@@ -54,18 +58,19 @@ export default class FixedNavbar extends Component {
             {this.state.button === "lists" ? (
               <Icon.FileText
                 style={{ fill: "white", stroke: "tomato" }}
-                size={35}
+                size={92}
               />
             ) : (
               <Icon.FileText
-                style={{ fill: "tomato", stroke: "white" }}
-                size={35}
+                style={{ fill: "#ff63479d", stroke: "white" }}
+                size={92}
               />
             )}
+            {/* <span className="bottom-nav-icon-links">Plan</span> */}
           </Link>
         </Nav.Brand>
 
-        <Nav.Brand>
+        {/* <Nav.Brand>
           <Link
             to="/settings"
             className="bottom-nav-icons"
@@ -73,17 +78,17 @@ export default class FixedNavbar extends Component {
           >
             {this.state.button === "settings" ? (
               <Icon.Settings
-                style={{ fill: "white", stroke: "tomato" }}
-                size={35}
+                style={{ fill: "tomato", stroke: "black" }}
+                size={50}
               />
             ) : (
               <Icon.Settings
-                style={{ fill: "tomato", stroke: "white" }}
-                size={35}
+                style={{ fill: "gray", stroke: "black" }}
+                size={50}
               />
             )}
           </Link>
-        </Nav.Brand>
+        </Nav.Brand> */}
 
         <Nav.Brand>
           <Link
@@ -91,10 +96,14 @@ export default class FixedNavbar extends Component {
             onClick={() => this.handleLogout(this.props)}
             className="bottom-nav-icons"
           >
-            <Icon.ArrowRightCircle size={35} />
+            <Icon.ArrowRightCircle size={92} style={{ fill: "#ff63479d", stroke: "white" }} />
+            {/* <span className="bottom-nav-icon-links">Logout</span> */}
           </Link>
         </Nav.Brand>
       </Nav>
+      
+  
+     
     );
   }
 }

@@ -16,27 +16,29 @@ class Fulllist extends Component {
   }
   render() {
     return (
-      <div>
+
+     
+
+      <div >
       
         {this.props.lists.map((task) => (
-
-
-          
-
-
-          
-          
         
-          <SwipeableList clssName="cool-list">
+          <SwipeableList className="cool-list">
 
               <SwipeableListItem className="cool-list-item"
 
                       swipeLeft={{
-                            content: <div>DELETE</div>,
+                            content: <Icon.Trash className="delete-item-left"
+                                      style={{ fill: "white", stroke: "white" }}
+                                      size={50}
+                                      />,
                             action: () => this.props.deleteList(task._id)
                           }}
                           swipeRight={{
-                            content: <div>Revealed content during swipe</div>,
+                            content: <Icon.Check className="delete-item-right"
+                                      style={{ fill: "blue", stroke: "white" }}
+                                      size={50}
+                                      />,
                             action: () => this.props.deleteList(task._id)
                           }}
 
@@ -57,6 +59,7 @@ class Fulllist extends Component {
 
         ))}
       </div>
+      
     );
   }
 }

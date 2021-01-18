@@ -34,17 +34,18 @@ export default class Signup extends Component {
   };
   render() {
     return (
-      <>
-        <div className="login-container">
+      <div className="container">
+      <div className="row">
+        <div className="col-LG login-container">
           <h2 className="logo">Tomato</h2>
           <p className="p">
             Sign up to create new tasks for your Pomodoro timer
           </p>
           <div className="signup-page">
-            <Button href="/" className="log-btn">
+            <Button href="/" className="log-btn back-to-login">
               Back to Login
             </Button>
-            <Form onSubmit={this.handleSubmit}>
+            <Form className= "signup-input-field " onSubmit={this.handleSubmit}>
               <Form.Group className="input-field">
                 <Form.Label htmlFor="username"></Form.Label>
                 <Form.Control
@@ -78,7 +79,8 @@ export default class Signup extends Component {
             </Form>
           </div>
         </div>
-      </>
+        </div>
+        </div>
     );
   }
 }

@@ -99,15 +99,17 @@ export default class List extends Component {
   render() {
     console.log(this.state.lists);
     return (
-      <div className="task-page">
+      <div className="container list-background">
+      <div className="row list-background">
+      <div className="task-page col-sm list-background" >
+      <div className="top-bar">
         <span className="add-task" onClick={this.handleSubmit}>
-          <Icon.Plus style={{ fill: "white", stroke: "white" }} size={35} />
+          <Icon.Plus style={{ fill: "lightgray", stroke: "lightgray" }} size={40} />
         </span>
         <Form className="star" onSubmit={this.handleSubmit}>
           <Form.Group className="input-field flex star sky">
             <Form.Control
               className="moon"
-              className="log remove-border "
               type="text"
               name="title"
               value={this.state.title}
@@ -117,13 +119,16 @@ export default class List extends Component {
             />
           </Form.Group>
          
+         
         </Form>
+        </div>
         <Fulllist
           className="star moon"
           deleteList={this.deleteList}
           lists={this.state.lists}
-        />
-        <FixedNavBar />
+        />  
+      </div>
+      </div>
       </div>
     );
   }
