@@ -9,7 +9,7 @@ Tomato is a project that I did during my web development bootcamp at Ironhack. T
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
 ```bash
-$ npm run dev
+$ npm run dev 
 ```
 
 ## Usage
