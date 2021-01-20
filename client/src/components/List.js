@@ -104,7 +104,7 @@ export default class List extends Component {
       <div className="task-page col-sm list-background" >
       <div className="top-bar">
         <span className="add-task" onClick={this.handleSubmit}>
-          <Icon.Plus style={{ fill: "lightgray", stroke: "lightgray" }} size={40} />
+          <Icon.Plus style={{ fill: "lightgray", stroke: "lightgray" }} size={50} />
         </span>
         <Form className="star" onSubmit={this.handleSubmit}>
           <Form.Group className="input-field flex star sky">

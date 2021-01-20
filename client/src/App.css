@@ -25,7 +25,7 @@ body {
 p {
   text-align: center;
   color: white;
-  font-size: 2.2vh;
+  font-size: 2.5vh;
   margin-top: 0;
   margin-bottom: 2vh;
 }
@@ -72,7 +72,7 @@ p {
   text-decoration: none;
   margin-bottom: 0px;
   height: 7vh;
-  padding-bottom: 4vh;
+  padding-bottom: 4.5vh;
   padding-top: 4vh;
 }
 
@@ -121,7 +121,7 @@ p {
   background-color: snow;
   border-top: 1px solid lightgray;
   height: 4vh;
-  font-size: 1.5vh;
+  font-size: 2vh;
 }
 
 .sign-up-btn {
@@ -196,7 +196,7 @@ p {
 }
 
 .Countdown-time {
-  font-size: 15vh;
+  font-size: 13vh;
   font-weight: lighter;
   color: white;
   /* height: 60%; */
@@ -309,13 +309,18 @@ p {
 .add-task {
   /* height: calc(1.5em + 0.75rem + 2px); */
 
-  font-size: 1rem;
+  font-size: 5vh;
   font-weight: 400;
   background-color: white;
   border-left: 1px solid lightgray;
+  border-right: 0;
   display: flex;
   align-items: center;
-  height: 6.5vh;
+  height: 7vh;
+  width: 9vw;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
 
   /* line-height: 1.5; */
 
@@ -328,12 +333,15 @@ p {
 .top-bar {
   display: flex;
   width: 100%;
-  height: 6.5vh;
+  height: 7vh;
+  background-color: white;
+  margin-top: 1vh;
 }
 
 .star {
   margin: 0px;
-  color: lightgray;
+  color: white;
+  background-color: white;
   width: 100%;
   border-left: none !important;
   border: none !important;
@@ -343,7 +351,7 @@ p {
   box-shadow: none !important;
   border-color: transparent !important;
   width: 100%;
-  height: 6.5vh;
+  height: 7vh;
   outline: none;
 }
 
@@ -378,9 +386,11 @@ p {
   border-bottom: none;
   border-top: none;
   border-radius: 0;
-  height: 6.5vh;
-  font-size: 35px;
+  height: 7vh;
+  font-size: 2.8vh;
   outline: none;
+  
+  color: white;
 }
 
 .moon:focus {
@@ -411,6 +421,7 @@ p {
   width: 100%;
   align-items: center;
   margin: 0;
+  
 }
 
 .cool-thing-yo {
@@ -419,17 +430,18 @@ p {
   align-items: center;
   font-size: 45px;
   color: rgb(63, 63, 63);
+  color: white;
   margin-left: 15px;
 }
 
 .delete-item-left {
   background-color: red;
-  margin-right: 15px;
+  margin-right: 35px;
 }
 
 .delete-item-right {
   background-color: blue;
-  margin-left: 15px;
+  margin-left: 35px;
 }
 
 .cool-list {
@@ -439,6 +451,7 @@ p {
 .cool-list-item {
   display: flex;
   align-items: center;
+  
 }
 
 .swipeable-list {
@@ -450,13 +463,16 @@ p {
 
 .swipeable-list-item {
   height: 8vh;
-  background-color: snow;
 }
 
 .swipeable-list-item__content {
   height: 8vh;
   font-size: large;
+  background-color: rgb(179, 72, 53) !important;
+
+
 }
+ 
 
 .swipeable-list-item__content--return {
   height: 8vh;
@@ -544,6 +560,7 @@ p {
   border-left: none;
   border: 0;
   box-shadow: none;
+  
 }
 
 .container {
@@ -587,7 +604,7 @@ p {
   width: 90vw;
   margin: auto;
   margin-top: 1vh;
-  font-size: 2vh;
+  font-size: 2.2vh;
 }
 
 .back-to-login {

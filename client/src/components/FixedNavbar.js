@@ -36,12 +36,12 @@ export default class FixedNavbar extends Component {
             {this.state.button === "countdown" ? (
               <Icon.Clock
                 style={{ fill: "white", stroke: "tomato" }}
-                size={92}
+                size={105}
               />
             ) : (
               <Icon.Clock
                 style={{ fill: "#ff63479d", stroke: "white" }}
-                size={92}
+                size={105}
               />
             )}
             {/* <span className="bottom-nav-icon-links">Count</span> */}
@@ -58,12 +58,12 @@ export default class FixedNavbar extends Component {
             {this.state.button === "lists" ? (
               <Icon.FileText
                 style={{ fill: "white", stroke: "tomato" }}
-                size={92}
+                size={105}
               />
             ) : (
               <Icon.FileText
                 style={{ fill: "#ff63479d", stroke: "white" }}
-                size={92}
+                size={105}
               />
             )}
             {/* <span className="bottom-nav-icon-links">Plan</span> */}
@@ -96,7 +96,7 @@ export default class FixedNavbar extends Component {
             onClick={() => this.handleLogout(this.props)}
             className="bottom-nav-icons"
           >
-            <Icon.ArrowRightCircle size={92} style={{ fill: "#ff63479d", stroke: "white" }} />
+            <Icon.ArrowRightCircle size={105} style={{ fill: "#ff63479d", stroke: "white" }} />
             {/* <span className="bottom-nav-icon-links">Logout</span> */}
           </Link>
         </Nav.Brand>
