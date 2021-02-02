@@ -8,9 +8,10 @@ const hbs = require("hbs");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
+const uri = process.env.MONGODB_URI;
 
 mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost/list-x", {
+  .connect( uri|| "mongodb://localhost/list-x", {
     useNewUrlParser: true,
   })
   .then((x) => {
