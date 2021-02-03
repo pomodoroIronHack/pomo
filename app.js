@@ -12,7 +12,7 @@ const uri = process.env.MONGODB_URI;
 
 mongoose
   .connect( uri|| "mongodb://localhost/list-x", {
-    useNewUrlParser: true,
+    useNewUrlParser: true, useUnifiedTopology: true,
   })
   .then((x) => {
     console.log(
