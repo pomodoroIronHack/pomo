@@ -23,7 +23,7 @@ mongoose
     console.error("Error connecting to mongo", err);
   });
 
-const app_name = require("./package.json").name;
+  const app_name = require("./package.json").name;
 const debug = require("debug")(
   `${app_name}:${path.basename(__filename).split(".")[0]}`
 );
@@ -65,26 +65,10 @@ app.use(
   })
 );
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-  });
-}
-
-//original 
-
-//new from express website 
-
-
-
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "/client/build")));
-
-+app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-});
+app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
 // default value for title local
 // app.locals.title = 'Express - Generated with IronGenerator';
@@ -100,3 +84,82 @@ app.use((req, res) => {
   res.sendFile(__dirname + "/client/build/index.html");
 });
 module.exports = app;
+
+
+// const app_name = require("./package.json").name;
+// const debug = require("debug")(
+//   `${app_name}:${path.basename(__filename).split(".")[0]}`
+// );
+
+// const app = express();
+
+// const session = require("express-session");
+// const passport = require("passport");
+// const cors = require("cors");
+// app.use(cors());
+
+// require("./configs/passport");
+
+// const MongoStore = require("connect-mongo")(session);
+// app.use(
+//   session({
+//     secret: process.env.SESSION_SECRET,
+//     resave: false,
+//     saveUninitialized: false,
+//     store: new MongoStore({ mongooseConnection: mongoose.connection }),
+//   })
+// );
+// app.use(passport.initialize());
+// app.use(passport.session());
+
+// // Middleware Setup
+// app.use(logger("dev"));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(cookieParser());
+
+// // Express View engine setup
+
+// app.use(
+//   require("node-sass-middleware")({
+//     src: path.join(__dirname, "public"),
+//     dest: path.join(__dirname, "public"),
+//     sourceMap: true,
+//   })
+// );
+
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static('client/build'));
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+//   });
+// }
+
+// //original 
+
+// //new from express website 
+
+
+
+// app.set("views", path.join(__dirname, "views"));
+// app.set("view engine", "hbs");
+// app.use(express.static(path.join(__dirname, "/client/build")));
+
+// +app.get('/*', function (req, res) {
+//   res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+// });
+
+// // default value for title local
+// // app.locals.title = 'Express - Generated with IronGenerator';
+
+// app.use("/api/", require("./routes/list"));
+// app.use("/api/tasks", require("./routes/task"));
+// app.use("/api/auth", require("./routes/auth"));
+
+// const index = require("./routes/index");
+// app.use("/", index);
+// app.use((req, res) => {
+//   // If no routes match, send them the React HTML.
+//   res.sendFile(__dirname + "/client/build/index.html");
+// });
+// module.exports = app;
