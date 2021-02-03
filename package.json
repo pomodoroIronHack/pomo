@@ -7,7 +7,7 @@
   },
   "private": true,
   "scripts": {
-    "start": "node app.js",
+    "start": "node ./bin/www",
     "dev": "DEBUG=project-x:* nodemon ./bin/www",
     "dev-windows": "nodemon ./bin/www"
   },
