@@ -11,6 +11,7 @@
     "dev": "DEBUG=project-x:* nodemon ./bin/www",
     "dev-windows": "nodemon ./bin/www"
   },
+  "homepage": "https://tomatopom.herokuapp.com/",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "body-parser": "^1.18.3",

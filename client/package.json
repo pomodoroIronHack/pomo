@@ -5,7 +5,6 @@
     "node": "12.16.3",
     "npm": "6.14.11"
   },
-  "homepage": "https://tomatopom.herokuapp.com/",
   "proxy": "http://localhost:5555",
   "private": true,
   "dependencies": {
