@@ -67,14 +67,14 @@ app.use(
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
-app.use(express.static(path.join(__dirname, "/client/build")));
+// app.use(express.static(path.join(__dirname, "/client/build")));
 // app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
-// app.use(express.static(path.join(__dirname, 'build')));
-// -app.get('/', function (req, res) {
-// +app.get('/*', function (req, res) {
-//    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-//  });
+app.use(express.static(path.join(__dirname, '/client/build')));
+
+app.get('/*', function (req, res) {
+   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+ });
 
 
 // default value for title local
